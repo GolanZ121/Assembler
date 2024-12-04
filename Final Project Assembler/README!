@@ -1,32 +1,25 @@
-הפרוייקט מוגש על ידי:
-גולן זיו 215704784
-נדב אדלר 215637497
+Explanation of the files:
+The assembler file is the main file and from it the calls are sent to the functions that handle the received file and at the end (if the file is correct) output files are issued. 
 
-הסבר על הקבצים:
-קובץ ה assembler הוא קובץ ה main וממנו נשלחות הקריאות לפונקציות שמטפלות בקובץ שהתקבל ובסוף (אם הקובץ תקין) מוציאות קבצי פלט. 
+The preAssembler file contains the main functions that handle the deployment of the macros and from it calls are sent to the auxiliary functions that help handle the received file. The functions also export the newly unzipped file.
 
-קובץ ה preAssembler מכיל את הפונקציות המרכזיות אשר מטפלות בפרישת המקרואים וממנה נשלחות קריאות לפנוקציות העזר אשר עוזרות לטפל בקובץ שהתקבל. הפונקציות גם  מייצאות הקובץ החדש הפרוש.
+The first pass file contains, among other things, the main function that performs the first pass and from which calls are sent to the auxiliary functions that help handle the file in the first pass.
 
-קובץ ה first pass מכיל בין היתר את הפונקציה הראשית שמבצעת את המעבר הראשון וממנה נשלחות קריאות לפונקציות העזר אשר עוזרות לטפל בקובץ במעבר הראשון.
+The second pass file contains the three main functions of the second pass: the function that checks the errors of the second pass and encodes symbols and the functions that create the ent, ext files.
 
-קובץ ה second pass מכיל את שלושת הפונקציות הראשיות של המעבר השני: הפונקציה שבודקת את שגיאות המעבר השני ומקודדת סמלים והפונקציות אשר יוצרות את קבצי ה ent, ext.
-גם מה second pass נשלחות קריאות לפונקציות העזר.
+The second pass also sends calls to the helper functions.
 
-קובץ ה utils הוא הקובץ המכיל את פונקציות העזר של המעבר הראשון והשני.
+The utils file is the file that contains the utility functions of the first and second pass.
 
-קובץ ה macroLists מכיל את פונקציות העזר של ה preAssemble.
+The macroLists file contains the helper functions of the preAssemble.
 
-קובץ ה convert מכיל את הפונקציה אשר ממירה את הקידוד הדצימלי ממערכי ההוראות והנתונים לקידוד בבסיס 64 ולבסוף יוצרת את קובץ ה object המתאים.
-
-בנוסף מצורפים 5 קבצי טסט:
-קובץ preAssemblerError שבוחן את השגיאות המטופלות בקדם אסמבלר ומוציא הודעות שגיאה.
-קובץ firstPassError שבוחן את השגיאות המטופלות במעבר הראשון ומוציא הודעות שגיאה.
-קובץ secondPassError שבוחן את השגיאות המטופלות במעבר השני ומוציא הודעות שגיאה.
-קובץ warningsTest שבוחן את האזהרות המטופלות ולבסוף מוציא קבצי פלט.
-קובץ validTest שהוא קובץ תקין בשפת אסמבלי ומוציא קבצי פלט.
-
-כל קבצי הפלט נמצאים בתיקייה outputFiles.
-
-
+The convert file contains the function that converts the decimal encoding from the instruction and data sets to base 64 encoding and finally creates the appropriate object file.
  
+In addition, 5 test files are attached:
+A preAssemblerError file that examines the errors handled by the preassembler and outputs error messages.
+firstPassError file that examines the errors handled in the first pass and outputs error messages.
+A secondPassError file that examines the errors handled in the second pass and outputs error messages.
+A warningsTest file that examines the handled warnings and finally outputs output files.
+A validTest file which is a valid assembly language file and outputs output files.
 
+All output files are in the outputFiles folder.
